@@ -4,14 +4,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PAT 儿科评估工具</title>
+    <title>PAT 儿科评估工具 - LZRYEK</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+      
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background-color: #f8fafc;
+        background: #fdfcfb;
+        min-height: 100vh;
+        overflow-x: hidden;
       }
+
+      .liquid-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: radial-gradient(circle at 0% 0%, #f3e8ff 0%, transparent 50%),
+                    radial-gradient(circle at 100% 0%, #e0e7ff 0%, transparent 50%),
+                    radial-gradient(circle at 100% 100%, #fae8ff 0%, transparent 50%),
+                    radial-gradient(circle at 0% 100%, #eff6ff 0%, transparent 50%);
+        animation: bgShift 20s ease-in-out infinite alternate;
+      }
+
+      @keyframes bgShift {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.1); }
+      }
+
+      .liquid-blob {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: -1;
+        opacity: 0.5;
+        animation: float 25s infinite alternate ease-in-out;
+      }
+
+      @keyframes float {
+        0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        33% { transform: translate(15%, 10%) rotate(10deg) scale(1.2); }
+        66% { transform: translate(-10%, 20%) rotate(-10deg) scale(0.8); }
+        100% { transform: translate(10%, -10%) rotate(5deg) scale(1.1); }
+      }
+
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+      }
+
+      @keyframes slideUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-slide-up { animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      
+      .stagger-1 { animation-delay: 0.1s; }
+      .stagger-2 { animation-delay: 0.15s; }
+      .stagger-3 { animation-delay: 0.2s; }
+      .stagger-4 { animation-delay: 0.25s; }
     </style>
   <script type="importmap">
 {
@@ -25,6 +85,11 @@
 </script>
 </head>
   <body>
+    <div class="liquid-bg"></div>
+    <div class="liquid-blob w-[500px] h-[500px] bg-purple-200/60 top-[-10%] left-[-10%]"></div>
+    <div class="liquid-blob w-[400px] h-[400px] bg-blue-200/50 bottom-[-5%] right-[-5%]" style="animation-delay: -5s;"></div>
+    <div class="liquid-blob w-[300px] h-[300px] bg-pink-100/40 top-[30%] right-[10%]" style="animation-delay: -10s;"></div>
+    
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

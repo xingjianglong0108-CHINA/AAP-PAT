@@ -56,6 +56,40 @@ export const SECONDARY_CATEGORY_LABELS = {
   'SAMPLE': '病史 (S)',
 };
 
+export const INTERVENTION_GUIDANCE: Record<string, { title: string, details: string[] }> = {
+  '进行二次评估 (ABCDE)': {
+    title: 'ABCDE 评估要点',
+    details: [
+      'A (Airway): 检查气道是否开放且可维持',
+      'B (Breathing): 听诊双肺音，评估呼吸深度',
+      'C (Circulation): 测量脉搏速度、强度及皮肤温度',
+      'D (Disability): 意识状态 (AVPU)、瞳孔大小及反应',
+      'E (Exposure): 暴露皮肤寻找皮疹或外伤，注意保暖'
+    ]
+  },
+  '获取详细病史 (SAMPLE)': {
+    title: 'SAMPLE 病史采集',
+    details: [
+      'S (Signs/Symptoms): 症状及伴随体征',
+      'A (Allergies): 药物、食物、环境过敏史',
+      'M (Medications): 正在服用的处方或非处方药',
+      'P (Past History): 既往疾病史或手术史',
+      'L (Last Meal): 最后进食时间及内容',
+      'E (Events): 导致当前急症的诱发事件'
+    ]
+  },
+  '常规生命体征监测': {
+    title: '关键监测指标',
+    details: [
+      '心率 (HR): 根据年龄段评估是否异常',
+      '呼吸频率 (RR): 观察一分钟计数',
+      '血压 (BP): 使用合适袖带，重点看平均动脉压',
+      '体温 (T): 核心温度测量',
+      '血氧饱和度 (SpO2): 目标维持在 94-98% 以上'
+    ]
+  }
+};
+
 export const ASSESSMENT_LOGIC: Record<string, AssessmentResult> = {
   '000': {
     status: 'STABLE',
