@@ -5,12 +5,12 @@ export enum PATCategory {
   CIRCULATION = 'CIRCULATION'
 }
 
-export type AssessmentView = 'INITIAL' | 'SECONDARY';
+export type AssessmentView = 'PAT' | 'INITIAL_ASSESSMENT' | 'CLINICAL_TOOLS';
 
 export interface Symptom {
   id: string;
   label: string;
-  category: PATCategory | string; // Can be PATCategory or ABCDE/SAMPLE
+  category: PATCategory | string;
 }
 
 export type PATStatus = 
@@ -20,7 +20,8 @@ export type PATStatus =
   | 'COMPENSATED_SHOCK' 
   | 'DECOMPENSATED_SHOCK' 
   | 'CNS_METABOLIC' 
-  | 'CARDIOPULMONARY_FAILURE';
+  | 'CARDIOPULMONARY_FAILURE'
+  | 'SHOCK_RESPIRATORY_DISTRESS';
 
 export interface AssessmentResult {
   status: PATStatus;
@@ -29,3 +30,5 @@ export interface AssessmentResult {
   priority: '低' | '中' | '高' | '极高';
   interventions: string[];
 }
+
+export type AgeGroup = 'INFANT' | 'TODDLER' | 'PRESCHOOLER' | 'SCHOOL_AGE' | 'ADOLESCENT';

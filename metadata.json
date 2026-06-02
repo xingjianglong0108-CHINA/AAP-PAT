@@ -1,5 +1,6 @@
 {
   "name": "儿童评估三角 (PAT) 决策工具",
-  "description": "基于美国儿科学会 (AAP) 标准的儿科急诊快速评估决策支持系统，包含视觉化三角反馈与AI专家深度报告功能。",
-  "requestFramePermissions": []
+  "description": "基于美国儿科学会 (AAP) 标准的儿科急诊快速评估决策支持系统，包含视觉化评估三角反馈、初级详查、以及格拉斯哥 (GCS)、APGAR 评分与儿科高级生命支持 (PALS) 救治指引等功能。",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
 }
